@@ -16,7 +16,6 @@ class Animal {
 
   // метод:
   voice () {
-    console.log('I am animal !!!' + `and i have tail ${this.hasTail}`)
     return 'I am animal !!!'
   }
 
@@ -43,6 +42,10 @@ const animal = new Animal(opts)
 
 // console.log('----res=', Animal.staticVoice())
 
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+
 // 3 - Создадим класс Cat унаследовавшись от класса Animal: В нем будет нов. ключ color
 class Cat extends Animal {
   static type = 'CAT'
@@ -56,6 +59,18 @@ class Cat extends Animal {
   voice () {
     super.voice() // вызовем метод родительского класса (опционально)
     return 'I am a cat !!!' // переписываем...
+  }
+
+  showNormal () {
+    console.log('this=', this)
+  }
+
+  showArrow = () => {
+    console.log('this=', this) // также как showNormal
+  }
+
+  showProto () {
+    console.log('this=', this.__proto__) // Animal class
   }
 
   // геттер:
